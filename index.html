@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Covid Datas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    
+</head>
+
+<body>
+    <div class="container">
+        <h2>Số ca nhiễm COVID -19 tại <span id="country"></span> <img src="" id="flag"></h2>
+        <div class="board">
+            <div class="card ca"><i class="fa fa-th-list"></i>
+                <h5>Tổng ca mắc</h5><span id="cases"></span>
+            </div>
+            <div class="card cr"><i class="fa fa-hospital-o" aria-hidden="true"></i>
+                <h5>Số lượng tiêm Vacine</h5><span id="critical"></span>
+            </div>
+            <div class="card a"><i class="fa fa-tachometer"></i>
+                <h5>Đang điều trị</h5><span id="active"></span>
+            </div>
+            <div class="card d"><i class="fa fa-times"></i>
+                <h5>Tử vong</h5><span id="death"></span>
+            </div>
+            <div class="card r"><i class="fa fa-check-square-o"></i>
+                <h5>Đã chữa khỏi</h5><span id="recovered"></span>
+            </div>
+            <div class="card t"><i class="fa fa-eye"></i>
+                <h5>Tổng ca nhiễm cả nước</h5><span id="tests"></span>
+            </div>
+        </div>
+    </div>
+    <script src="myscript.js"></script>
+</body>
+
+</html>
