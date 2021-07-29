@@ -1,10 +1,15 @@
-fetch('https://api-kent.netlify.app/.netlify/functions/api')
+fetch('https://api-kent.netlify.app/.netlify/functions/api/vn')
     .then((response) => {
         return response.json();
     })
     .then((data) => {
         console.log(data);
-        var code = "31";
+        for (let i = 0; i < 63; i++) {
+            if(data.detail[i].name == "Bình Định")
+            {
+                var code = i;
+            }
+        }
         document.getElementById("country").innerHTML = data.detail[code].name;
         document.getElementById("active").innerHTML = data.detail[code].cases - data.detail[code].recovered;
         document.getElementById("cases").innerHTML = data.detail[code].cases;
@@ -12,14 +17,17 @@ fetch('https://api-kent.netlify.app/.netlify/functions/api')
         document.getElementById("recovered").innerHTML = data.detail[code].recovered;
         document.getElementById("tests").innerHTML = data.total.totalCases;
     });
-fetch('https://api-kent.netlify.app/.netlify/functions/api/vaccines')
+fetch('https://api-kent.netlify.app/.netlify/functions/api/vn/vaccines/distribution')
     .then((response) => {
         return response.json();
     })
     .then((data) => {
         console.log(data)
-        var code = "34"
-        document.getElementById("critical").innerHTML = data.dataVacType[code].astraz +
-            data.dataVacType[code].pfizer +
-            data.dataVacType[code].moderna;
+        for (let i = 0; i < 63; i++) {
+            if(data.dataVacDose[i].name == "Bình Định")
+            {
+                var code = i;
+            }
+        }
+        document.getElementById("critical").innerHTML = data.dataVacDose[code].vaccines;
     })
